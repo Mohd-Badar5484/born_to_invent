@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Born To Invent - Lyric Library</title>
 
 <style>
@@ -13,9 +15,18 @@
   }
 
   body{
-    background: radial-gradient(circle at top, #1a1a1a, #f7f4f4);
+    background: radial-gradient(circle at top, #1a1a1a, #000000);
     color:white;
     min-height:100vh;
+
+    opacity:0;
+    transform:translateY(20px);
+    transition:all 0.5s ease-in-out;
+  }
+
+  body.loaded{
+    opacity:1;
+    transform:translateY(0);
   }
 
   /* NAVBAR */
@@ -45,7 +56,6 @@
     border-radius:50%;
   }
 
-  /* BACK BUTTON INSIDE NAV */
   .back-btn{
     padding:8px 14px;
     background:rgba(255,255,255,0.08);
@@ -85,14 +95,12 @@
     border-radius:15px;
     text-align:center;
     transition:0.3s ease;
-    cursor:pointer;
     box-shadow:0 8px 20px rgba(0,0,0,0.4);
   }
 
   .card:hover{
     transform:translateY(-6px) scale(1.03);
     background:rgba(255,255,255,0.08);
-    box-shadow:0 12px 25px rgba(0,0,0,0.6);
   }
 
   a{
@@ -109,30 +117,11 @@
     margin-top:5px;
   }
 
-  body {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-body.loaded {
-  opacity: 1;
-}
-
-body {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-in-out;
-}
-
-body.loaded {
-  opacity: 1;
-  transform: translateY(0);
-}
 </style>
 </head>
 
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
 <!-- NAVBAR -->
 <div class="navbar">
   <div class="logo">
@@ -140,7 +129,6 @@ body.loaded {
     born_to_invent
   </div>
 
-  <!-- BACK BUTTON -->
   <a class="back-btn" href="index.html">← Back</a>
 </div>
 
@@ -181,12 +169,12 @@ body.loaded {
 </div>
 
 <script>
-  // Page load fade-in
+  // smooth page load
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
   });
 
-  // Smooth page exit transition
+  // smooth page transition
   document.querySelectorAll("a").forEach(link => {
     if (link.target !== "_blank") {
       link.addEventListener("click", function(e) {
