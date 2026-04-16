@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORN_TO_INVENT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class = "logo">
+        <img src = "logo.png" alt = "logo">
+         <span>BORN_TO_INVENT</span>
+    </div>
+
+    <ul class = "nav-links">
+        <li> <a href="index.html"> Home </a> </li>
+        <li> <a href="skills.html"> Skills </a> </li>
+        <li> <a href="about.html">About</a> </li>
+    </ul>
+
+      <div class="menu-toggle">
+    ☰
+  </div>
+</nav>
+
+<section class = "hero">
+    <h1>Rap Vibes Only 🎶</h1>
+    <p>Welcome to my world of Beats & Edits</p>
+    <h2>If you want black screen Lyrics, click here 👇</h2>
+    <a href="lyrics.html">
+  <button>Explore Now</button>
+</a>
+</section>
+
+<section class="tracks">
+  <h1>My Top Tracks 👑</h1>
+
+  <div class="track-container">
+
+    <div class="track-card">
+      <h2>Firse Machayenge</h2>
+      <p>Old but Gold ❤️</p>
+    </div>
+
+    <div class="track-card">
+      <h2>Company</h2>
+      <p>Mumbai Slang 🔥</p>
+    </div>
+
+    <div class="track-card">
+      <h2>Bajis</h2>
+      <p>Full Energy 🔥</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="reels">
+  <h2>🎬 My Edits</h2>
+
+  <div class="reel-container">
+
+    <div class="reel-card">
+      <video src="video1.mp4" muted loop></video>
+    </div>
+
+    <div class="reel-card">
+      <video src="video2.mp4" muted loop></video>
+    </div>
+
+    <div class="reel-card">
+      <video src="video3.mp4" muted loop></video>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  © 2026 BORN_TO_INVENT  |  All Rights Reserved
+</footer>
+
+<script>
+  // video hover play/pause
+  const videos = document.querySelectorAll("video");
+
+  videos.forEach(video => {
+    video.addEventListener("mouseover", () => {
+      video.play();
+    });
+
+    video.addEventListener("mouseout", () => {
+      video.pause();
+    });
+  });
+
+  // hamburger menu
+  const menu = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menu.classList.toggle("open");
+  });
+</script> 
+
+
+</body>
+</html>

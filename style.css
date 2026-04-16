@@ -1,0 +1,429 @@
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,255,204,0.2);
+}
+
+/* Logo container FIX */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Logo image */
+.logo img{
+  width:50px;
+  display:block; 
+}
+
+/* Logo text */
+.logo span{
+  display:flex;
+  font-size: 15px;
+  font-weight:bold;
+  color:#171818; 
+  letter-spacing:2px;
+  white-space:nowrap;
+  padding: 10px;
+
+}
+
+/* Menu */
+ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+ul li{
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* Hover */
+ul li:hover{
+  color:#6d8f88;
+  text-shadow:0 0 10px #00ffcc;
+}
+
+.hero{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1{
+    color: black;
+    font-size: 50px;
+    animation: glow 2s infinite alternate;
+}
+
+.hero p{
+    margin:15px 0;
+    font-size: 18px;
+    color: black
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px #00ffcc; }
+  to{ text-shadow:0 0 30px #00ffcc; }
+}
+
+.hero button{
+  padding:10px 25px;
+  border:none;
+  background:#00ffcc;
+  color:black;
+  font-size:16px;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #00ffcc;
+}
+
+.tracks{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.track-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.track-card{
+  width:250px;
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.track-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px #00ffcc;
+}
+
+.reels{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.reel-container{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.reel-card{
+  width:200px;
+  height:350px;
+  overflow:hidden;
+  border-radius:15px;
+  background:black;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.reel-card video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.reel-card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #00ffcc;
+}
+
+.track-card{
+  border:1px solid rgba(0,255,204,0.3);
+}
+
+.track-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px #00ffcc;
+  border:1px solid #00ffcc;
+}
+
+footer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+footer{
+  background:#f9f8f8;
+  color:#aaa;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+footer{
+  text-shadow:0 0 5px rgba(8, 8, 8, 0.856);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+
+  .nav-links{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#0a0a0a;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    display:none; 
+  }
+
+  .nav-links li{
+    margin:15px 0;
+  }
+
+  .menu-toggle{
+    display:block; 
+  }
+}
+
+.nav-links.active{
+  display:flex;
+}
+
+ul{
+  display:flex;
+}
+
+ul{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:0;
+    width:100%;
+    background:#f4f0f0;
+    text-align:center;
+    padding:20px 0;
+  }
+}
+
+.about{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.about-container{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+/* 🔥 MAIN BOX (track-card jaisa) */
+.about-text{
+  width:300px;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(57, 31, 31, 0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(0,255,204,0.3);
+  transition:0.3s;
+}
+
+/* Hover effect 😈 */
+.about-text:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px #00ffcc;
+  border:1px solid #00ffcc;
+}
+
+/* Heading */
+.about-text h3{
+  color:#00ffcc;
+  margin-bottom:10px;
+}
+
+/* Paragraph */
+.about-text p{
+  color:#0e0d0d;
+  line-height:1.6;
+}
+
+.nav-links a{
+  text-decoration:none;   
+  color:white;            
+  font-weight:500;
+  transition:0.3s;
+}.nav-links a{
+  text-decoration:none;   
+  color:rgb(15, 15, 15);           
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#00ffcc;
+  text-shadow:0 0 10px #00ffcc;
+}
+
+.nav-links a:visited{
+  color:rgb(17, 16, 16);
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+.back-btn{
+  text-decoration:none;  
+  color:black;            
+}
+
+.skills{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.skills-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+/* 🔥 SAME AS ABOUT / TRACK CARD */
+.skill-card{
+  width:300px;
+  padding:25px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(0,255,204,0.3);
+  transition:0.3s;
+}
+
+/* Hover effect 😈 */
+.skill-card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 25px #00ffcc;
+  border:1px solid #00ffcc;
+}
+
+/* Text styling */
+.skill-card h3{
+  color:#00ffcc;
+  margin-bottom:10px;
+}
+
+.skill-card p{
+  color:#111111;
+  line-height:1.6;
+}
+
+.back-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:10px 25px;
+  background:#00ffcc;
+  color:black;
+  text-decoration:none;
+  border-radius:5px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #00ffcc;
+}
+
+.back-btn:visited{
+  color:black;
+}
+
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* hover effect */
+.menu-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* nav links default */
+.nav-links {
+  transition: all 0.4s ease;
+}
+
+/* mobile dropdown animation */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(251, 248, 248, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  gap: 10px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: dropFade 0.4s forwards;
+}
+
+@keyframes dropFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-toggle.open {
+  transform: rotate(90deg);
+}
+
+.hero h2{
+  color: #551454;
+}
