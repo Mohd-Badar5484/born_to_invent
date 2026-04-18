@@ -182,22 +182,23 @@
   });
 
   // smooth page transition
-  document.querySelectorAll("a").forEach(link => {
-    if (link.target !== "_blank") {
-      link.addEventListener("click", function(e) {
-        const href = this.getAttribute("href");
+document.querySelectorAll("a").forEach(link => {
+  const href = link.getAttribute("href");
 
-        if (href && !href.startsWith("#")) {
-          e.preventDefault();
-          document.body.classList.remove("loaded");
+  // Skip video files
+  if (href && href.endsWith(".mp4")) return;
 
-          setTimeout(() => {
-            window.location.href = href;
-          }, 400);
-        }
-      });
+  link.addEventListener("click", function(e) {
+    if (href && !href.startsWith("#")) {
+      e.preventDefault();
+      document.body.classList.remove("loaded");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
     }
   });
+});
 </script>
 
 </body>
