@@ -428,3 +428,7 @@ html{
   color: black;
   font-style: Arial, Helvetica, sans-serif;
 }
+
+.logout{
+  color: red;
+}
