@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORN_TO_INVENT</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#000000">
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BORN_TO_INVENT</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
 </head>
+
 <body>
 
 <nav>
-    <div class = "logo">
-        <img src = "logo.png" alt = "logo">
-         <span>BORN_TO_INVENT</span>
-    </div>
-
-    <ul class = "nav-links">
-        <li> <a href="index.html"> Home </a> </li>
-        <li> <a href="skills.html"> Skills </a> </li>
-        <li> <a href="about.html">About</a> </li>
-    </ul>
-
-      <div class="menu-toggle">
-    ☰
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+    <span>BORN_TO_INVENT</span>
   </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="about.html">About</a></li>
+
+    <!-- 🔐 LOGOUT -->
+    <li><a href="#" onclick="logout()" style="color:#00ffcc;">➡️ Logout</a></li>
+  </ul>
+
+  <div class="menu-toggle">☰</div>
 </nav>
 
-<section class = "hero">
-    <h1>Rap Vibes Only 🎶</h1>
-    <p>Welcome to my world of Beats & Edits</p>
-    <h2>If you want black screen Lyrics, click here 👇</h2>
-    <a href="lyrics.html">
-  <button>Explore Now</button>
-</a>
+<section class="hero">
+  <h1>Rap Vibes Only 🎶</h1>
+
+  <!-- 👤 USER NAME -->
+  <p id="welcomeUser"></p>
+
+  <p>Welcome to my world of Beats & Edits</p>
+  <h2>If you want black screen Lyrics, click here 👇</h2>
+
+  <a href="lyrics.html">
+    <button>Explore Now</button>
+  </a>
 </section>
 
 <section class="tracks">
@@ -80,26 +88,19 @@
   </div>
 </section>
 
-
 <footer>
-  © 2026 BORN_TO_INVENT  |  All Rights Reserved
+  © 2026 BORN_TO_INVENT | All Rights Reserved
 </footer>
 
+<!-- 🎥 UI SCRIPT -->
 <script>
-  // video hover play/pause
   const videos = document.querySelectorAll("video");
 
   videos.forEach(video => {
-    video.addEventListener("mouseover", () => {
-      video.play();
-    });
-
-    video.addEventListener("mouseout", () => {
-      video.pause();
-    });
+    video.addEventListener("mouseover", () => video.play());
+    video.addEventListener("mouseout", () => video.pause());
   });
 
-  // hamburger menu
   const menu = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
@@ -107,24 +108,53 @@
     navLinks.classList.toggle("active");
     menu.classList.toggle("open");
   });
+</script>
 
-    self.addEventListener("install", (e) => {
-  console.log("Service Worker Installed");
+<!-- 🔐 FIREBASE AUTH SCRIPT -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } 
+from "https://www.gstatic.com/firebasejs/12.14.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAHTVxYkztqsJWUcZR2KFwOlOLuM-pYT_I",
+  authDomain: "bkp-world.firebaseapp.com",
+  projectId: "bkp-world",
+  appId: "1:581593163998:web:97402660d48fdb48fc3a4f"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// 🔐 AUTH CHECK
+onAuthStateChanged(auth, (user) => {
+  if(user){
+    const el = document.getElementById("welcomeUser");
+    if(el){
+      el.innerText = "Welcome " + (user.displayName || user.email) + " 🔥";
+    }
+  } else {
+    window.location.href = "login.html";
+  }
 });
 
-self.addEventListener("fetch", (e) => {
-  e.respondWith(fetch(e.request));
-});
-</script> 
+// 🚪 LOGOUT
+window.logout = function(){
+  signOut(auth).then(() => {
+    window.location.href = "login.html";
+  });
+};
 
+</script>
+
+<!-- ⚡ SERVICE WORKER -->
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js')
     .then(() => console.log("Service Worker Registered"));
 }
 </script>
-    
-
 
 </body>
 </html>
