@@ -179,10 +179,6 @@ footer{
   font-size:14px;
 }
 
-footer{
-  text-shadow:0 0 5px rgba(8, 8, 8, 0.856);
-}
-
 .menu-toggle{
   display:none;
   font-size:25px;
