@@ -428,3 +428,17 @@ html{
 .logout{
   color: red;
 }
+
+
+footer{
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-top: 1px solid rgba(255,255,255,0.15);
+
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
