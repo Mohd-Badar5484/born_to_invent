@@ -69,6 +69,7 @@ ul li:hover{
 .hero p{
     margin:15px 0;
     font-size: 18px;
+    animation: glow 2s infinite alternate;
     color: black
 }
 
