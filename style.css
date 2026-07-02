@@ -400,7 +400,7 @@ html{
   position: absolute;
   top: 70px;
   right: 20px;
-  background: rgba(251, 248, 248, 0.9);
+  background: grey;
   padding: 15px;
   border-radius: 10px;
   gap: 10px;
